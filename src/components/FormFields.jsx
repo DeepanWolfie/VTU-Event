@@ -1,21 +1,28 @@
 import React from 'react';
 import { FormControl, TextField } from '@mui/material';
-
+import './FormFields.css'
 const FormField = ({ label, type, value, onChange }) => (
   <FormControl fullWidth sx={{ mb: 2 }}>
-    <TextField
+   
+  
+   
+     <TextField
       sx={{
         "& .MuiOutlinedInput-root": {
-          borderRadius: "16px",
-        },
-      }}
-      label={label}
-      variant="outlined"
-      type={type}
-      value={value}
-      onChange={onChange}
-    />
+          borderRadius: "16px", 
+          },
+          }}
+          label={label}
+          variant="outlined"
+          type={type}
+          value={value}
+          onChange={onChange}
+          /> 
   </FormControl>
 );
 
+
 export default FormField;
+
+      // {label}
+      //  <input type={type} label={label} value={value} onChange={onChange} />

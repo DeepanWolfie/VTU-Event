@@ -31,12 +31,11 @@ function LoginForm() {
 
   const handleLogin = async (e) => {
     e.preventDefault();
-    setError(""); // Reset error state
+    setError(""); 
     try {
       await signInWithEmailAndPassword(auth, email, password);
       console.log("User signed in successfully");
       oginpage();
-      // Redirect to a different page or perform further actions
     } catch (err) {
       setError(err.message);
     }
@@ -50,7 +49,7 @@ function LoginForm() {
     <Container maxWidth="sm">
 
       <Typography variant='h5' color="textSecondary" sx={{my:4}} >
-        Welcome to veltech's students Event and Workshop Register portal
+        Welcome 
 </Typography>
 
       <Card sx={{ mt: 8, p: 4, border: '1px solid #ccc', borderRadius: 2 }} elevation={10}>
