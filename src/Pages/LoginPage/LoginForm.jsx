@@ -44,28 +44,11 @@ function LoginForm() {
         <h2 id="name">Veltech events and registration portal.</h2>
         <h2 id="login">Welcome Back!</h2>
         <form>
-          <label htmlFor="email" className="email">
-            Email
-          </label>
+         
           <br />
-          <input
-            type="text"
-            name="email"
-            className="email-input"
-            placeholder="Enter Your email"
-            title="email"
-          />
-          <label htmlFor="password" className="password">
-            Password
-          </label>
+          <FormField type="email" label="Email" />
           <br />
-          <input
-            type="password"
-            name="password"
-            className="password-input"
-            placeholder="Enter Your password"
-            title="password"
-          />
+          <FormField type="password" label="Password" ></FormField>
           <h3>Forgot password?</h3>
           <a href="#" id="forgot">
             Click here{" "}
