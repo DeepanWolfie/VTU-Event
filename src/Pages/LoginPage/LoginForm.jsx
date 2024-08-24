@@ -1,14 +1,6 @@
 import React, { useState } from 'react';
-import {
-  Container,
-  TextField,
-  Button,
-  Box,
-  Typography,
-  FormControl,
-  Card,
-  Divider,
-} from '@mui/material';
+import './LoginForm.css';
+
 import FormField from "../../components/FormFields";
 import { useNavigate } from 'react-router-dom';
 import { auth } from '../../firebase/firebase';
@@ -47,66 +39,46 @@ function LoginForm() {
   };
 
   return (
-    <Container maxWidth="sm">
-
-      <Typography variant='h5' color="textSecondary" sx={{my:4}} >
-        Welcome 
-</Typography>
-
-      <Card sx={{ mt: 8, p: 4, border: '1px solid #ccc', borderRadius: 2 }} elevation={10}>
-        <Typography variant="h5" gutterBottom>
-          Login
-        </Typography>
-        <form onSubmit={handleLogin}>
-        <FormField
-            label="VTU-Email"
-            type="email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-          />
-          <FormField
-            label="Password"
+    <>
+    <div className="container">
+        <h2 id="name">Veltech events and registration portal.</h2>
+        <h2 id="login">Welcome Back!</h2>
+        <form>
+          <label htmlFor="email" className="email">
+            Email
+          </label>
+          <br />
+          <input
             type="text"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
+            name="email"
+            className="email-input"
+            placeholder="Enter Your email"
+            title="email"
           />
-          
-          
-
-          <Typography
-            variant="body2" 
-            sx={{ mb: 2,  textAlign:'right'}}
-            onClick={handleForgetPassword}
-          >
-            Forget Password?{' '}
-            <span style={{ color: 'blue' }}>Click here</span>
-          </Typography>
-          <LoginButton value="hello" onClick={console.log("first") }></LoginButton>
-          <Button
-            type="submit"
-            variant="contained"
-            sx={{ backgroundColor: '#efefef', color: 'black', borderRadius: '50px' }}
-            fullWidth
-          >
-            Login
-          </Button>
-
-          <Divider sx={{ my: 2 }} />
-
-          
+          <label htmlFor="password" className="password">
+            Password
+          </label>
+          <br />
+          <input
+            type="password"
+            name="password"
+            className="password-input"
+            placeholder="Enter Your password"
+            title="password"
+          />
+          <h3>Forgot password?</h3>
+          <a href="#" id="forgot">
+            Click here{" "}
+          </a>
+          <button id="button">
+            <a href="https://www.google.com">SignIn</a>
+          </button>
         </form>
-        <Button
-          onClick={signupNaigate}
-            variant="contained"
-            sx={{ backgroundColor: '#efefef', color: 'black', borderRadius: '50px' }}
-            fullWidth
-          >
-            Sign up
-          </Button>
-
-       
-      </Card>
-    </Container>
+        <h3 className='have'>Don't have an account ?</h3>
+        <span id="account" onClick={signupNaigate}>Signup</span>
+      </div>
+    
+    </>
   );
 }
 

@@ -1,0 +1,12 @@
+.login{
+    width:480px;
+    height:35px;
+    border:none;
+    border-radius: 5px;
+    background-color: hsl(213, 100%, 50%);
+    color:white;
+}
+.login:hover{
+    background-color: hsl(213, 100%, 70%);
+    cursor: pointer;
+}
