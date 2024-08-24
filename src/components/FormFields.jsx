@@ -22,7 +22,5 @@ const FormField = ({ label, type, value, onChange }) => (
 );
 
 
-export default FormField;
 
-      // {label}
-      //  <input type={type} label={label} value={value} onChange={onChange} />
+export default FormField ;

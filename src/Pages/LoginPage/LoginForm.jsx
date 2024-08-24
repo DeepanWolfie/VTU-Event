@@ -13,6 +13,7 @@ import FormField from "../../components/FormFields";
 import { useNavigate } from 'react-router-dom';
 import { auth } from '../../firebase/firebase';
 import { signInWithEmailAndPassword } from 'firebase/auth';
+import LoginButton from '../../components/LoginButton/LoginButton';
 
 function LoginForm() {
   const navi=  useNavigate();
@@ -80,6 +81,7 @@ function LoginForm() {
             Forget Password?{' '}
             <span style={{ color: 'blue' }}>Click here</span>
           </Typography>
+          <LoginButton value="hello" onClick={console.log("first") }></LoginButton>
           <Button
             type="submit"
             variant="contained"
