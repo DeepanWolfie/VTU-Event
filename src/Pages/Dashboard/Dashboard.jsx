@@ -14,14 +14,9 @@ import {
   Toolbar,
   IconButton,
 } from "@mui/material";
+import './Dashboard.css';
 import { getAuth, onAuthStateChanged } from "firebase/auth";
 import { useNavigate } from "react-router-dom";
-import MenuIcon from "@mui/icons-material/Menu";
-import AdbIcon from "@mui/icons-material/Adb";
-
-const pages = ["Products", "Pricing", "Blog"];
-const settings = ["Profile", "Account", "Dashboard", "Logout"];
-
 const Dashboard = () => {
   const [userDetail, setUserDetail] = useState(null);
 
@@ -60,7 +55,15 @@ const Dashboard = () => {
       }
     });
   };
+  const [currentSlide, setCurrentSlide] = useState(1);
 
+  useEffect(() => {
+      const interval = setInterval(() => {
+          setCurrentSlide((prevSlide) => (prevSlide >= 4 ? 1 : prevSlide + 1));
+      }, 5000);
+
+      return () => clearInterval(interval);
+  }, []);
   useEffect(() => {
     fetchUserData();
   }, []);
@@ -68,6 +71,46 @@ const Dashboard = () => {
     <>
       {userDetail ? (
         <>
+          
+          <Typography>{ userDetail.email}</Typography>
+
+            <div className="slider">
+            <div className="slides">
+                
+                <div className={`slide ${currentSlide === 1 ? 'active' : ''}`}>
+    <img src="https://picsum.photos/600/400" alt="Image 1" />
+</div>
+<div className={`slide ${currentSlide === 2 ? 'active' : ''}`}>
+    <img src="https://picsum.photos/500/400" alt="Image 2" />
+</div>
+<div className={`slide ${currentSlide === 3 ? 'active' : ''}`}>
+    <img src="https://picsum.photos/800/400" alt="Image 3" />
+</div>
+<div className={`slide ${currentSlide === 4 ? 'active' : ''}`}>
+    <img src="https://picsum.photos/900/400" alt="Image 4" />
+</div>
+
+               
+                <div className="navigation-manual">
+                    <button
+                        className={`manual-btn ${currentSlide === 1 ? 'active' : ''}`}
+                        onClick={() => setCurrentSlide(1)}
+                    >  </button>
+                    <button
+                        className={`manual-btn ${currentSlide === 2 ? 'active' : ''}`}
+                        onClick={() => setCurrentSlide(2)}
+                    ></button>
+                    <button
+                        className={`manual-btn ${currentSlide === 3 ? 'active' : ''}`}
+                        onClick={() => setCurrentSlide(3)}
+                    ></button>
+                    <button
+                        className={`manual-btn ${currentSlide === 4 ? 'active' : ''}`}
+                        onClick={() => setCurrentSlide(4)}
+                    ></button>
+                </div>
+            </div>
+        </div>
         </>
       ) : (
         <p>loading...</p>
