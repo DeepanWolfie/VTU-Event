@@ -42,7 +42,7 @@ function LoginForm() {
     <>
     <div className="container">
         <h2 id="name">Veltech events and registration portal.</h2>
-        <h2 id="login">Welcome Back!</h2>
+        <h2 id="login">Welcome Back..!</h2>
         <form>
           <label htmlFor="email" className="email">
             Email

@@ -59,7 +59,7 @@ await setDoc(docRef, {
   return (
   <>
 <div className="signup-box">
-<h1 className="title">Create Your Account</h1>
+<h1 className="title">Create Your Account Now..!</h1>
 <form>
   <label htmlFor="Name" id="label">Name</label><br/>
   <input type="text" title="Name"  placeholder="Enter your name"className="enter-name"/><br />
@@ -96,8 +96,9 @@ await setDoc(docRef, {
             <option>CSE-CS</option>
         </select>
     </div>
-    <button>Register</button>
 </form>
+<button className="register">Register</button>
+<h3 className="space">Already having an account?</h3>
 </div>
   </>);
 }
