@@ -100,6 +100,7 @@ await setDoc(docRef, {
 <button className="register">Register</button>
 <h3 className="space">Already having an account?</h3>
 </div>
+<span id="log" onClick={loginpage}>Login</span>
   </>);
 }
 
