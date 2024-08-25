@@ -43,19 +43,20 @@ function LoginForm() {
     <div className="container">
         <h2 id="name">Veltech events and registration portal.</h2>
         <h2 id="login">Welcome Back!</h2>
-        <form>
+        <form onSubmit={handleLogin}>
          
           <br />
-          <FormField type="email" label="Email" />
+          <FormField type="text" label="Email"  onChange={(e) => setEmail(e.target.value)} />
           <br />
-          <FormField type="password" label="Password" ></FormField>
+          <FormField type="password" label="Password" onChange={(e) => setPassword(e.target.value)}></FormField>
+          <br />
           <h3>Forgot password?</h3>
           <a href="#" id="forgot">
-            Click here{" "}
+            Click here
           </a>
-          <button id="button">
-            <a href="https://www.google.com">SignIn</a>
-          </button>
+<LoginButton value="Login" onClick="submit"  ></LoginButton>
+
+          
         </form>
         <h3 className='have'>Don't have an account ?</h3>
         <span id="account" onClick={signupNaigate}>Signup</span>

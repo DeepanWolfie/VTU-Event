@@ -5,6 +5,7 @@ import { createUserWithEmailAndPassword } from "firebase/auth";
 import { auth ,firestore } from "../../firebase/firebase";
 import { doc, setDoc } from "firebase/firestore";
 import { useNavigate } from "react-router-dom";
+import LoginButton from "../../components/LoginButton/LoginButton";
 
 function Signup() {
   const navi=  useNavigate();
@@ -56,11 +57,8 @@ await setDoc(docRef, {
     }
   };
   return (
-    <Container maxWidth="sm">
-      <Card
-        sx={{ mt: 8, p: 4, border: "1px solid #ccc", borderRadius: 2 }}
-        elevation={10}
-      >
+    <>
+     
         <Button onClick={loginpage}
             type="submit"
             variant="contained"
@@ -140,19 +138,7 @@ await setDoc(docRef, {
             onChange={(e) => setMentorPhone(e.target.value)}
           />
 
-          <Button
-            type="submit"
-            variant="contained"
-            sx={{
-              backgroundColor: "#efefef",
-              color: "black",
-              borderRadius: "50px",
-              mt: 2,
-            }}
-            fullWidth
-          >
-            Sign Up
-          </Button>
+          <LoginButton value="Sign Up"></LoginButton>
 
           {error && (
             <Typography color="error" sx={{ mt: 2 }}>
@@ -165,8 +151,8 @@ await setDoc(docRef, {
             </Typography>
           )}
         </form>
-      </Card>
-    </Container>
+      
+    </>
   );
 }
 

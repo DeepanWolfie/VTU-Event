@@ -1,8 +1,9 @@
 import React from 'react';
 import { FormControl, TextField } from '@mui/material';
 import './FormFields.css'
-const FormField = ({ label, type, value, onChange }) => (
+const FormField = ({ label, type, value, onChange,pattern }) => (
   <>
+    <br />
     <label htmlFor="email" className="email">
             {label}
     </label>
@@ -12,7 +13,8 @@ const FormField = ({ label, type, value, onChange }) => (
             onChange={onChange}
             className="email-input"
             placeholder={label}
-            title={value}
+      title={value}
+      pattern={pattern}
             />
             </>
 );

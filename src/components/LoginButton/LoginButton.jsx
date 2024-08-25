@@ -3,7 +3,9 @@ import React from 'react'
 
 const LoginButton = ({value,onClick}) => {
   return (
-      <button onClick={onClick} className="login">value</button>
+    <button id="button">
+      <a href="">{ value}</a>
+  </button>
   )
 }
 
