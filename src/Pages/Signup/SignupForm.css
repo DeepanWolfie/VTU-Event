@@ -1,0 +1,237 @@
+/*
+.signup-box{
+    width:700px;
+    height:700px;
+    background-color: rgb(23, 95, 251);
+    margin-left: 400px;
+    margin-top: 100px;
+    text-align: center;
+}
+.title{
+    color:hsl(206, 78%, 46%);
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+#label{
+    position: relative;
+    right:260px;
+    font-size: 25px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.enter-name{
+    position: relative;
+    left:10px;
+    top:5px;
+    border:none;
+    width: 550px;
+    height: 40px;
+    border-radius: 5px;
+    border: 2px solid hsl(84, 14%, 93%);
+    font-size: 20px;
+}
+::placeholder{
+    color:grey;
+}
+#mail{
+    position: relative;
+    top:50px;
+    right:252px;
+    font-size: 25px;
+    right:545px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.email-input{
+    position: relative;
+    top:45px;
+    left:30px;
+    width:555px;
+}
+#vtu{
+    position: relative;
+    top:90px;
+    font-size: 25px;
+    right:530px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.vtu-number{
+    position: relative;
+    top:45px;
+    left:30px;
+    width:555px;
+}
+*/
+.signup-box{
+    width:700px;
+    height:900px;
+    /*background-color: rgb(23, 95, 251);*/
+    margin-left: 400px;
+    margin-top: 10px;
+    text-align: center;
+}
+#label{
+    position: relative;
+    right:260px;
+    font-size: 25px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.title{
+    color:hsl(206, 78%, 46%);
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+::placeholder{
+    color:hsl(0, 1%, 57%);
+}
+.enter-name{
+    position: relative;
+    right:18px;
+    top:5px;
+    border:none;
+    width: 550px;
+    height: 40px;
+    border-radius: 5px;
+    border: 2px solid hsl(180, 2%, 80%);
+    font-size: 20px;
+}
+#mail{
+    position: relative;
+    top:15px;
+    font-size: 25px;
+    right:260px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.mail{
+    position: relative;
+    top:20px;
+    right:18px;
+    width:550px;
+    border:none;
+    height: 40px;
+    border-radius: 5px;
+    border: 2px solid hsl(180, 2%, 80%);
+    font-size: 20px;
+}
+#vtu{
+    position: relative;
+    top:30px;
+    font-size: 25px;
+    right:240px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.vtu-number{
+    position: relative;
+    top:35px;
+    width:550px;
+    height: 40px;
+    right:18px;
+    border:none;
+    border-radius: 5px;
+    border:2px solid hsl(180, 2%, 80%);
+    font-size: 20px;
+}
+#word{
+    position: relative;
+    top:40px;
+    font-size: 25px;
+    right:235px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.word{
+    position: relative;
+    top:45px;
+    width:550px;
+    height: 40px;
+    right:18px;
+    border:none;
+    border-radius: 5px;
+    border:2px solid hsl(180, 2%, 80%);
+    font-size: 20px;
+}
+#mentor{
+    position: relative;
+    top:50px;
+    font-size: 25px;
+    right: 220px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.mentor{
+    position: relative;
+    top:55px;
+    width:550px;
+    height: 40px;
+    right:18px;
+    border:none;
+    border-radius: 5px;
+    border:2px solid hsl(180, 2%, 80%);
+    font-size: 20px;
+}
+#mentor-phnum{
+    position: relative;
+    top:58px;
+    font-size: 25px;
+    right: 215px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.mentor-phnum{
+    position: relative;
+    top:63px;
+    width:550px;
+    height: 40px;
+    right:18px;
+    border:none;
+    border-radius: 5px;
+    border:2px solid hsl(180, 2%, 80%);
+    font-size: 20px;
+}
+#stud-dob{
+    position: relative;
+    top:65px;
+    font-size: 25px;
+    right: 220px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.stud-dob{
+    position: relative;
+    top:68px;
+    width:550px;
+    height: 40px;
+    right:18px;
+    border:none;
+    border-radius: 5px;
+    border:2px solid hsl(180, 2%, 80%);
+    font-size: 20px;
+}
+#yos{
+    position: relative;
+    top:70px;
+    font-size: 25px;
+    right: 200px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.yos{
+    position: relative;
+    top:73px;
+    width:550px;
+    height: 40px;
+    right:18px;
+    border:none;
+    border-radius: 5px;
+    border:2px solid hsl(180, 2%, 80%);
+    font-size: 20px;
+}
+#branch{
+    position: relative;
+    top:75px;
+    font-size: 25px;
+    right: 195px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.branch{
+    position: relative;
+    top:78px;
+    width:550px;
+    height: 40px;
+    right:18px;
+    border:none;
+    border-radius: 5px;
+    border:2px solid hsl(180, 2%, 80%);
+    font-size: 20px;
+}

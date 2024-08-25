@@ -27,6 +27,7 @@
     position: relative;
     left: 50px;
     top: 80px;
+    font-family: Arial, Helvetica, sans-serif;
   }
   .email-input {
     font-size: 15px;
@@ -47,6 +48,7 @@
     right: 460px;
     top: 130px;
     padding: 5px;
+    font-family: Arial, Helvetica, sans-serif;
   }
   .password-input {
     font-size: 15px;
@@ -93,6 +95,7 @@
     color: hsl(206, 78%, 46%);
     font-size: 18px;
     font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
   }
   input {
     background: white;
@@ -125,4 +128,5 @@
     font-weight: bold;
     text-decoration: none;
     cursor: pointer;
+    font-family:Arial, Helvetica, sans-serif;
   }
