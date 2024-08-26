@@ -3,28 +3,18 @@ import { UilReact, UilLaptop } from "@iconscout/react-unicons";
 export const SidebarData = [
   {
     icon: UilReact,
-    heading: "Dashboard",
+    heading: "Home",
   },
   {
     icon: UilLaptop,
-    heading: "User",
+    heading: "Profile",
   },
   {
     icon: UilReact,
-    heading: "Dashboard",
-  },
-  {
-    icon: UilLaptop,
-    heading: "User",
-  },
-  {
+    heading: "Attended event",
+  },{
     icon: UilReact,
-
-    heading: "Dashboard",
-  },
-  {
-    icon: UilLaptop,
-    heading: "User",
+    heading: "About",
   },
 ];
 
@@ -36,11 +26,12 @@ export const CardsData = [
       boxShadow: "0px 10px 20px 0px #e0c6f5",
     },
     date: "10-11-2024 to 13-11-2024",
-    days: "2days",
+    days: "2",venue:"23232",
+    
     registered: "10/60",
     faculty: "mr.dotdotdot",
-    image: "",
-    certificate: true,
+    png:UilReact,
+    certificate: true,resourcePreson:"dr.abdul",
   },
   {
     title: "web workshop",
@@ -49,11 +40,11 @@ export const CardsData = [
       boxShadow: "0px 10px 20px 0px #e0c6f5",
     },
     date: "10-11-2024 to 13-11-2024",
-    days: "2days",
+    days: "2",venue:"23232",
     registered: "10/60",
     faculty: "mr.dotdotdot",
-    image: "",
-    certificate: true,
+    png: UilReact,
+    certificate: true,resourcePreson:"dr.abdul",
   },
   {
     title: "fire workshop",
@@ -62,11 +53,11 @@ export const CardsData = [
       boxShadow: "0px 10px 20px 0px #e0c6f5",
     },
     date: "10-11-2024 to 13-11-2024",
-    days: "2days",
+    days: "2",venue:"23232",
     registered: "10/60",
     faculty: "mr.dotdotdot",
-    image: "",
-    certificate: true,
+    png: UilReact,
+    certificate: true,resourcePreson:"dr.abdul",
   },
   {
     title: "full stack workshop",
@@ -75,10 +66,10 @@ export const CardsData = [
       boxShadow: "0px 10px 20px 0px #e0c6f5",
     },
     date: "10-11-2024 to 13-11-2024",
-    days: "2days",
+    days: "2",venue:"23232",
     registered: "10/60",
     faculty: "mr.dotdotdot",
-    image: "",
-    certificate: true,
+    png: UilReact,
+    certificate: true,resourcePreson:"dr.abdul",
   },
 ];

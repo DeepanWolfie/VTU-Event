@@ -66,16 +66,14 @@ const Dashboard = () => {
           <div className="backgroundlayer">
             <div className="threelayers">
               <Sidebar />
-              <MainPart/>
+              <MainPart />
             </div>
-        </div>
+          </div>
         </>
       ) : (
-       
-       <center>
-            
-         <p>loading...</p>
-       </center>
+        <center>
+          <p>loading...</p>
+        </center>
       )}
     </>
   );

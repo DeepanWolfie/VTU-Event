@@ -1,12 +1,15 @@
 import React from "react";
 import "./Card.css";
 import { CardsData } from "../../Data/Data";
-const Card = () => {
+import Card from "../Card/Card";
+const Cards = () => {
   return (
-    <div>
+    <div className="Cards">
       {CardsData.map((card, index) => {
         return (
           <div className="parentContainer">
+         
+         
             <Card
               title={card.title}
               color={card.color}
@@ -14,8 +17,10 @@ const Card = () => {
               days={card.days}
               registered={card.registered}
               faculty={card.faculty}
-              image={card.image}
+              png={card.png}
               certificate={card.certificate}
+              venue={card.venue}
+              resourcePreson={card.resourcePreson}
             />
           </div>
         );
@@ -24,4 +29,4 @@ const Card = () => {
   );
 };
 
-export default Card;
+export default Cards;

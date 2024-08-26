@@ -1,0 +1,71 @@
+.CompactCard {
+  display: flex;
+  flex-direction: column;
+  width: 10rem;
+  border-radius: 0.7rem;
+  color: white;
+  position: relative;
+  height: 15rem;
+  padding: 10px;
+  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2); 
+  transition: box-shadow 0.3s ease;
+}
+.CompactCard:hover {
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3); 
+}
+.menubutton {
+  height: 10px;
+}
+.radialBar {
+  padding: 5px;
+}
+.pythonLogo {
+  background-color: lightgray;
+  border-radius: 0.7rem;
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+}
+.register-button {
+  padding: 5px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgb(58, 179, 227);
+  border-radius: 0.7rem;
+  margin-top: 10px; /* Space above the button */
+  color: white;
+  font-size: 12px;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+.detail {
+  padding: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column-reverse;
+}
+.detail {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Distributes space evenly between elements */
+  align-items: flex-start; /* Aligns items to the start (left) */
+  height: 100%;
+  gap: 5px;
+}
+
+.title {
+  font-size: 18px;
+  font-weight: bold;
+  color: #000000;
+}
+.date,
+.time,
+.venue,
+.resourcePerson,
+.registered {
+  font-size: 10px;
+  color: #ffffff;
+}
