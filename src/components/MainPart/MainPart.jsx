@@ -8,7 +8,8 @@ const MainPart = () => {
           <h1>UpComming events
               
 </h1>
-          <Cards/>
+      <Cards />
+      <h1>hello</h1>
     </div>
   )
 }

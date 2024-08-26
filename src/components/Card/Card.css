@@ -7,12 +7,9 @@
   position: relative;
   height: 15rem;
   padding: 10px;
-  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2); 
-  transition: box-shadow 0.3s ease;
+  background: var(--black);
 }
-.CompactCard:hover {
-  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3); 
-}
+
 .menubutton {
   height: 10px;
 }
@@ -50,9 +47,8 @@
 .detail {
   display: flex;
   flex-direction: column;
-  justify-content: space-between; /* Distributes space evenly between elements */
-  align-items: flex-start; /* Aligns items to the start (left) */
-  height: 100%;
+  justify-content: space-between;
+  align-items: flex-start;
   gap: 5px;
 }
 
@@ -68,4 +64,27 @@
 .registered {
   font-size: 10px;
   color: #ffffff;
+}
+
+.ExpandedCardTitle {
+  font-size: 18px;
+
+  padding: 2%;
+  font-weight: bold;
+}
+.ExpandedpythonLogo {
+  background-color: lightgray;
+  border-radius: 0.7rem;
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+}
+.ExpandedCard {
+  display: flex;
+  flex-direction: column;
+  border-radius: 0.7rem;
+  position: relative;
+  padding: 10px;
+  background: var(--black);
+  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
 }

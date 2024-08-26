@@ -1,28 +1,36 @@
 import React, { useState } from "react";
 import "./Card.css";
 import pythonlogo from "../../assets/python.png";
+import { UilTimes } from "@iconscout/react-unicons";
+import { motion, LayoutGroup } from "framer-motion";
 
-import { motion, AnimateSharedLayout } from "framer-motion";
 const Card = (props) => {
   const [expanded, setExpanded] = useState(false);
   return (
-    //     <AnimateSharedLayout>
-    //         {
-
-    //         }
-    //   </AnimateSharedLayout>
-    expanded ? "hello" : <CompactCard param={props} />
+        <LayoutGroup>
+            {
+    expanded ? (
+      <ExpandedCard param={props} setExpanded={()=>setExpanded(false)} />
+    ) : (
+      <CompactCard param={props} setExpanded={() => setExpanded(true)} />
+    )
+    
+                }
+          </LayoutGroup>
   );
 };
-function CompactCard({ param }) {
+
+
+
+function CompactCard({ param,setExpanded }) {
   const Png = param.png;
   return (
-    <div
+    <motion.div
       className="CompactCard "
-      style={{
-        background: param.color.backGround,
-        boxShadow: param.color.boxShadow,
-      }}
+     
+      
+      onClick={setExpanded}
+      layoutId=""
     >
       <div className="radialBar">
         <img src={pythonlogo} alt="" className="pythonLogo" />
@@ -37,8 +45,43 @@ function CompactCard({ param }) {
         </span>
         <span className="registered">Registered: {param.registered}</span>
       </div>
-      <div className="register-button" onClick={console.log("first")} >Register</div>
-    </div>
+      <div className="register-button" >
+        Register
+      </div>
+    </motion.div>
   );
 }
+
+function ExpandedCard({ param, setExpanded }) {
+  return (
+    <motion.div
+      className="ExpandedCard"
+     
+      layoutId="expandableCard"
+      layout
+    >
+      <div style={{ display: "flex", justifyContent: "flex-end" }}>
+        <UilTimes onClick={setExpanded} />
+      </div><div className="expandedLogo">
+        <img src={pythonlogo} alt="" className="ExpandedpythonLogo" />
+      </div>
+      
+      <span className="ExpandedCardTitle">{param.title}</span>
+          <div className="detail-expanded">
+        <span className="description">Description: {param.description}</span>
+        <span className="date">Date: {param.date}</span>
+        <span className="time">Time: {param.days} Days 10:00 AM to 4:00 PM</span>
+        <span className="venue">Venue: {param.venue}</span>
+        <span className="resourcePerson">
+          Resource Person: {param.resourcePreson}
+        </span>
+        <span className="registered">Registered: {param.registered}</span>
+        <span className="additionalInfo">
+          Additional Info: {param.additionalInfo}
+        </span>
+      </div>
+    </motion.div>
+  );
+}
+
 export default Card;
