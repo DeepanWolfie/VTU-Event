@@ -9,7 +9,7 @@ const Sidebar = () => {
     <div className="Sidebar">
       <div className="logo">
         <img src={Logo} alt="" />
-        <span>Deepan.L</span>
+        <span></span>
       </div>
       {/* menus */}
 

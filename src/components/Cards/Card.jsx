@@ -1,14 +1,36 @@
-import React from "react";
+// src/components/Cards/Cards.jsx
+import React, { useEffect, useState } from "react";
+import { collection, getDocs } from "firebase/firestore";
+import { firestore } from "../../firebase/firebase"; // Adjust the path as needed
 import "./Card.css";
-import { CardsData } from "../../Data/Data";
 import Card from "../Card/Card";
-import { EventData } from "../../Data/Data";
+
 const Cards = () => {
+  const [eventData, setEventData] = useState([]);
+
+  // Function to fetch event data from Firestore
+  const fetchEventData = async () => {
+    try {
+      const querySnapshot = await getDocs(collection(firestore, "events"));
+      const events = querySnapshot.docs.map(doc => ({
+        id: doc.id,
+        ...doc.data()
+      }));
+      setEventData(events);
+    } catch (error) {
+      console.error("Error fetching events: ", error);
+    }
+  };
+
+  // Fetch the event data when the component mounts
+  useEffect(() => {
+    fetchEventData();
+  }, []);
+
   return (
     <div className="Cards">
-      {EventData.map((card, index) => {
-        return (
-          <div className="parentContainer" key={index}>
+      {eventData.map((card, index) => (
+        <div className="parentContainer" key={index}>
           <Card
             title={card.title}
             logoImage={card.logoImage}
@@ -29,8 +51,7 @@ const Cards = () => {
             eventCoordinators={card.eventCoordinators}
           />
         </div>
-        );
-      })}
+      ))}
     </div>
   );
 };

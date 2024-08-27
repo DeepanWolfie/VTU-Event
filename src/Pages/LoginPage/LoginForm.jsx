@@ -6,14 +6,12 @@ import { useNavigate } from "react-router-dom";
 import { auth } from "../../firebase/firebase";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import LoginButton from "../../components/LoginButton/LoginButton";
-import { toast } from 'react-toastify'; 
+import { toast } from "react-toastify";
 import {
   Container,
-  TextField,
   Button,
   Typography,
   Box,
-  Grid,
   Paper,
   CssBaseline,
   Divider,
@@ -31,18 +29,16 @@ function LoginForm() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const [error, setError] = useState("");
-
   const handleLogin = async (e) => {
     e.preventDefault();
-    setError("");
+
     try {
       await signInWithEmailAndPassword(auth, email, password);
       console.log("User signed in successfully");
       oginpage();
-      toast.success("Success !",);
+      toast.success("Success !");
     } catch (err) {
-      toast.error(`Error: ${err.message}`); 
+      toast.error(`Error: ${err.message}`);
     }
   };
   const handleForgetPassword = () => {
@@ -76,27 +72,19 @@ function LoginForm() {
             </Typography>
           </Box>
           <Box component="form" onSubmit={handleLogin} sx={{ mt: 1 }}>
-          <FormField
+            <FormField
               label="Email"
               type="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               pattern="[^@\s]+@[^@\s]+\.[^@\s]+"
-            /><FormField 
-                          label="Password"
-            type="password"
-            value={password}
+            />
+            <FormField
+              label="Password"
+              type="password"
+              value={password}
               onChange={(e) => setPassword(e.target.value)}
-              
-           
-          />
-
-           
-            {error && (
-              <Typography color="error" variant="body2">
-                {error}
-              </Typography>
-            )}
+            />
             <Box
               sx={{
                 width: "100%",
@@ -129,7 +117,10 @@ function LoginForm() {
             >
               <Typography>
                 {" "}
-                Don't have account? <span className="click" onClick={signupNaigate} >Signup</span>
+                Don't have account?{" "}
+                <span className="click" onClick={signupNaigate}>
+                  Signup
+                </span>
               </Typography>
             </Box>
           </Box>

@@ -40,13 +40,26 @@ function CompactCard({ param,setExpanded }) {
         <span className="date">{param.date}</span>
         <span className="time">{param.days} Days 10:00AM to 4:00PM</span>
         <span className="venue">Venue: {param.venue}</span>
+        <span className="venue">registered: { param.noOfStudentRegistered}/{param.studentSlot}</span>
+
         <span className="resourcePerson">
           Resource Person: {param.resourcePreson}
         </span>
         <span className="registered">Registered: {param.registered}</span>
       </div>
-      <div className="register-button" >
-        Register
+
+      <div>
+
+      {param.noOfStudentRegistered < param.studentSlot ? (
+            <div className="register-button">
+              Register
+            </div>
+          ) : (
+            <div className="register-button disabled">
+              Closed
+            </div>
+          )}
+
       </div>
     </motion.div>
   );
