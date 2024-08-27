@@ -1,4 +1,4 @@
-.container {
+/* .container {
     height: 650px;
     background-color: white;
     width: 750px;
@@ -60,6 +60,7 @@
     color: white;
     text-decoration: none;
   }
+
   h3 {
     position: relative;
     top: 110px;
@@ -105,5 +106,10 @@
     font-size: 18px;
     font-weight: bold;
     text-decoration: none;
+    cursor: pointer;
+  } */
+
+  .click{
+    color:#1565c0;
     cursor: pointer;
   }

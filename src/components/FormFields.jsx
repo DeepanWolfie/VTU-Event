@@ -1,24 +1,22 @@
-import React from 'react';
-import { FormControl, TextField } from '@mui/material';
-import './FormFields.css'
-const FormField = ({ label, type, value, onChange,pattern }) => (
-  <>
-    <br />
-    <label htmlFor="email" className="email">
-            {label}
-    </label>
-    <br></br>
-  <input
-            type={type}
-            onChange={onChange}
-            className="email-input"
-            placeholder={label}
-      title={value}
-      pattern={pattern}
-            />
-            </>
+import React from "react";
+
+import { TextField } from "@mui/material";
+import "./FormFields.css";
+const FormField = ({ label, type, value, onChange, pattern,required }) => (
+  <TextField
+    margin="normal"
+    required={required}
+    fullWidth
+    id={label.toLowerCase()}
+    label={label}
+    name={label.toLowerCase()}
+    type={type || "text"}
+    autoComplete={label.toLowerCase()}
+    autoFocus
+    value={value}
+    onChange={onChange}
+    inputProps={pattern ? { pattern } : {}}
+  />
 );
 
-
-
-export default FormField ;
+export default FormField;
