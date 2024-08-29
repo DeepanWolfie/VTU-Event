@@ -42,37 +42,27 @@ function LoginForm() {
     <>
     <div className="container">
         <h2 id="name">Veltech events and registration portal.</h2>
+
         <h2 id="login">Welcome Back..!</h2>
         <form>
           <label htmlFor="email" className="email">
             Email
           </label>
+=======
+        <h2 id="login">Welcome Back!</h2>
+        <form onSubmit={handleLogin}>
+         
+f
           <br />
-          <input
-            type="text"
-            name="email"
-            className="email-input"
-            placeholder="Enter Your email"
-            title="email"
-          />
-          <label htmlFor="password" className="password">
-            Password
-          </label>
+          <FormField type="text" label="Email"  onChange={(e) => setEmail(e.target.value)} />
           <br />
-          <input
-            type="password"
-            name="password"
-            className="password-input"
-            placeholder="Enter Your password"
-            title="password"
-          />
+          <FormField type="password" label="Password" onChange={(e) => setPassword(e.target.value)}></FormField>
+          <br />
           <h3>Forgot password?</h3>
           <a href="#" id="forgot">
-            Click here{" "}
+            Click here
           </a>
-          <button id="button">
-            <a href="https://www.google.com">SignIn</a>
-          </button>
+<LoginButton value="Login" onClick="submit"  ></LoginButton>
         </form>
         <h3 className='have'>Don't have an account ?</h3>
         <span id="account" onClick={signupNaigate}>Signup</span>

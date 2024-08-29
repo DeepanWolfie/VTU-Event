@@ -106,7 +106,15 @@ input {
     font-size: 28px; 
   }
 
-  .email,
+  .email{
+    text-align: center;
+    font-size: 40px;
+    margin-bottom: 20px;
+    position: relative;
+    top: 47px;
+    color: black;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  }
   .password {
     font-size: 20px; 
     margin: 10px 0;
@@ -120,7 +128,7 @@ input {
   #forgot,#account{
     text-align: center;
   }
-}
+
 
 @media screen and (max-width: 480px) {
   .container {
@@ -168,4 +176,5 @@ input {
     margin-left: 275px;*/
     text-align:center;
   }
+}
 }

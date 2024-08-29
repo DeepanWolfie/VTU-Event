@@ -5,7 +5,11 @@ import { createUserWithEmailAndPassword } from "firebase/auth";
 import { auth ,firestore } from "../../firebase/firebase";
 import { doc, setDoc } from "firebase/firestore";
 import { useNavigate } from "react-router-dom";
+<<<<<<< HEAD
 import './SignupForm.css'
+=======
+import LoginButton from "../../components/LoginButton/LoginButton";
+>>>>>>> e1b48fe05e391e3e0121233b7bf253cf2774c2ff
 
 function Signup() {
   const navi=  useNavigate();
@@ -57,6 +61,7 @@ await setDoc(docRef, {
     }
   };
   return (
+<<<<<<< HEAD
   <>
 <div className="signup-box">
 <h1 className="title">Create Your Account Now..!</h1>
@@ -102,6 +107,105 @@ await setDoc(docRef, {
 </div>
 <span id="log" onClick={loginpage}>Login</span>
   </>);
+=======
+    <>
+     
+        <Button onClick={loginpage}
+            type="submit"
+            variant="contained"
+            sx={{
+              backgroundColor: "#efefef",
+              color: "black",
+              borderRadius: "50px",
+              mt: 2,
+            }}
+            fullWidth
+          >
+             Back top login Page
+          </Button>
+        
+        <Typography variant="h3" gutterBottom>
+          Signup
+        </Typography>
+        <form onSubmit={handleSignup}>
+          <FormField
+            label="Name"
+            type="text"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+          />
+          <FormField
+            label="VTU-Email"
+            type="email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+          />
+          <FormField
+            label="Password"
+            type="password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+          />
+          <FormField
+            label="VTU-No"
+            type="text"
+            value={vtuno}
+            onChange={(e) => setVtuno(e.target.value)}
+          />
+          <FormField
+            label="Phone"
+            type="tel" // Changed to tel for phone numbers
+            value={studentPhone}
+            onChange={(e) => setStudentPhone(e.target.value)}
+          />
+          <FormField
+            label="Department"
+            type="text"
+            value={department}
+            onChange={(e) => setDepartment(e.target.value)}
+          />
+          <FormField
+            label="Year"
+            type="number"
+            value={year}
+            onChange={(e) => setYear(e.target.value)}
+          />
+          <FormField
+            label="DOB"
+            type="date"
+            value={dob}
+            onChange={(e) => setDob(e.target.value)}
+          />
+          <FormField
+            label="Mentor Name"
+            type="text"
+            value={mentorName}
+            onChange={(e) => setMentorName(e.target.value)}
+          />
+          <FormField
+            label="Mentor Phone"
+            type="tel" // Changed to tel for phone numbers
+            value={mentorPhone}
+            onChange={(e) => setMentorPhone(e.target.value)}
+          />
+
+          <LoginButton value="Sign Up"></LoginButton>
+
+          {error && (
+            <Typography color="error" sx={{ mt: 2 }}>
+              {error}
+            </Typography>
+          )}
+          {success && (
+            <Typography color="success" sx={{ mt: 2 }}>
+              {success}
+            </Typography>
+          )}
+        </form>
+      
+    </>
+  );
+>>>>>>> e1b48fe05e391e3e0121233b7bf253cf2774c2ff
 }
 
 export default Signup;

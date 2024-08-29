@@ -1,22 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { auth, firestore } from "../../firebase/firebase";
 import { doc, getDoc } from "firebase/firestore";
-import {
-  Typography,
-  Menu,
-  Button,
-  AppBar,
-  Container,
-  Avatar,
-  Tooltip,
-  MenuItem,
-  Box,
-  Toolbar,
-  IconButton,
-} from "@mui/material";
-import './Dashboard.css';
+import Sidebar from "../../components/sidebar/Sidebar";
+import "./Dashboard.css";
 import { getAuth, onAuthStateChanged } from "firebase/auth";
 import { useNavigate } from "react-router-dom";
+import MainPart from "../../components/MainPart/MainPart";
 const Dashboard = () => {
   const [userDetail, setUserDetail] = useState(null);
 
@@ -25,8 +14,11 @@ const Dashboard = () => {
     navi("/");
   }
   const signout = async () => {
+    console.log("SIGNOUT CALLED");
+
     try {
       await auth.signOut();
+      console.log("SIGNOUT CALLED");
       loginpage();
     } catch (e) {
       console.error("Error signing out:", e);
@@ -58,11 +50,11 @@ const Dashboard = () => {
   const [currentSlide, setCurrentSlide] = useState(1);
 
   useEffect(() => {
-      const interval = setInterval(() => {
-          setCurrentSlide((prevSlide) => (prevSlide >= 4 ? 1 : prevSlide + 1));
-      }, 5000);
+    const interval = setInterval(() => {
+      setCurrentSlide((prevSlide) => (prevSlide >= 4 ? 1 : prevSlide + 1));
+    }, 5000);
 
-      return () => clearInterval(interval);
+    return () => clearInterval(interval);
   }, []);
   useEffect(() => {
     fetchUserData();
@@ -71,49 +63,19 @@ const Dashboard = () => {
     <>
       {userDetail ? (
         <>
-          
-          <Typography>{ userDetail.email}</Typography>
-
-            <div className="slider">
-            <div className="slides">
-                
-                <div className={`slide ${currentSlide === 1 ? 'active' : ''}`}>
-    <img src="https://picsum.photos/600/400" alt="Image 1" />
-</div>
-<div className={`slide ${currentSlide === 2 ? 'active' : ''}`}>
-    <img src="https://picsum.photos/500/400" alt="Image 2" />
-</div>
-<div className={`slide ${currentSlide === 3 ? 'active' : ''}`}>
-    <img src="https://picsum.photos/800/400" alt="Image 3" />
-</div>
-<div className={`slide ${currentSlide === 4 ? 'active' : ''}`}>
-    <img src="https://picsum.photos/900/400" alt="Image 4" />
-</div>
-
-               
-                <div className="navigation-manual">
-                    <button
-                        className={`manual-btn ${currentSlide === 1 ? 'active' : ''}`}
-                        onClick={() => setCurrentSlide(1)}
-                    >  </button>
-                    <button
-                        className={`manual-btn ${currentSlide === 2 ? 'active' : ''}`}
-                        onClick={() => setCurrentSlide(2)}
-                    ></button>
-                    <button
-                        className={`manual-btn ${currentSlide === 3 ? 'active' : ''}`}
-                        onClick={() => setCurrentSlide(3)}
-                    ></button>
-                    <button
-                        className={`manual-btn ${currentSlide === 4 ? 'active' : ''}`}
-                        onClick={() => setCurrentSlide(4)}
-                    ></button>
-                </div>
+          <div className="backgroundlayer">
+            <div className="threelayers">
+              <Sidebar />
+              <MainPart/>
             </div>
         </div>
         </>
       ) : (
-        <p>loading...</p>
+       
+       <center>
+            
+         <p>loading...</p>
+       </center>
       )}
     </>
   );
