@@ -1,20 +1,19 @@
 import React, { useEffect, useState } from "react";
-import "./Sidebar.css";
 import Logo from "../../assets/person.png";
-import { SidebarData } from "../../Data/Data.jsx";
+import { adminSidebarData } from "../../Data/Data";
 import { UilSignout } from "@iconscout/react-unicons";
-const Sidebar = () => {
+
+const AdminSidebar = () => {
   const [selected, setSelected] = useState(0);
   return (
-    <div className="Sidebar">
+    <div>
       <div className="logo">
         <img src={Logo} alt="" />
-        <span></span>
+        <span>Admin</span>
       </div>
-      {/* menus */}
 
       <div className="menu">
-        {SidebarData.map((items, index) => {
+        {adminSidebarData.map((items, index) => {
           return (
             <div
               className={selected === index ? "menuItem active" : "menuItem"}
@@ -27,11 +26,11 @@ const Sidebar = () => {
           );
         })}
         <div className="menuItem">
-          <UilSignout />
+          <UilSignout  />
         </div>
       </div>
     </div>
   );
 };
 
-export default Sidebar;
+export default AdminSidebar;

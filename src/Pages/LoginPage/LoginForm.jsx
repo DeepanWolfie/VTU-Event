@@ -3,9 +3,9 @@ import "./LoginForm.css";
 
 import FormField from "../../components/FormFields";
 import { useNavigate } from "react-router-dom";
-import { auth } from "../../firebase/firebase";
+import { auth ,firestore} from "../../firebase/firebase";
 import { signInWithEmailAndPassword } from "firebase/auth";
-import LoginButton from "../../components/LoginButton/LoginButton";
+import { doc, getDoc } from "firebase/firestore";
 import { toast } from "react-toastify";
 import {
   Container,
@@ -19,13 +19,7 @@ import {
 import { LockOutlined as LockOutlinedIcon } from "@mui/icons-material";
 function LoginForm() {
   const navi = useNavigate();
-  function signupNaigate() {
-    navi("/signup");
-  }
-  function oginpage() {
-    navi("/dashboard");
-  }
-
+  
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
@@ -33,16 +27,36 @@ function LoginForm() {
     e.preventDefault();
 
     try {
-      await signInWithEmailAndPassword(auth, email, password);
-      console.log("User signed in successfully");
-      oginpage();
-      toast.success("Success !");
-    } catch (err) {
-      toast.error(`Error: ${err.message}`);
+      const userCredential = await signInWithEmailAndPassword(auth, email, password);
+      const user = userCredential.user;
+
+      
+      const docRef = doc(firestore, "Users", user.uid);
+      const docSnap = await getDoc(docRef);
+
+      if (docSnap.exists()) {
+        const userData = docSnap.data();
+        
+        if (userData.role === "admin") {
+          toast.success("Login successful! Redirecting to Admin Panel...");
+          navi("/AdminDashboard");  
+        } else if (userData.role === "user") {
+          toast.success("Login successful!");
+          navi("/dashboard");  
+        } else {
+          toast.error("Access denied. You are not authorized.");
+          await auth.signOut();  
+        }
+      } else {
+        toast.error("User data not found.");
+      }
+    } catch (error) {
+      toast.error(`Login failed: ${error.message}`);
     }
   };
-  const handleForgetPassword = () => {
-    window.alert("Forget Password clicked!");
+
+  const signupNavigate = () => {
+    navi("/signup");
   };
 
   return (
@@ -118,7 +132,7 @@ function LoginForm() {
               <Typography>
                 {" "}
                 Don't have account?{" "}
-                <span className="click" onClick={signupNaigate}>
+                <span className="click" onClick={signupNavigate}>
                   Signup
                 </span>
               </Typography>

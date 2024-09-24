@@ -1,14 +1,13 @@
-// src/components/Cards/Cards.jsx
+
 import React, { useEffect, useState } from "react";
 import { collection, getDocs } from "firebase/firestore";
-import { firestore } from "../../firebase/firebase"; // Adjust the path as needed
+import { firestore } from "../../firebase/firebase"; 
 import "./Card.css";
 import Card from "../Card/Card";
 
 const Cards = () => {
   const [eventData, setEventData] = useState([]);
 
-  // Function to fetch event data from Firestore
   const fetchEventData = async () => {
     try {
       const querySnapshot = await getDocs(collection(firestore, "events"));
@@ -17,12 +16,13 @@ const Cards = () => {
         ...doc.data()
       }));
       setEventData(events);
+      console.log(eventData)
     } catch (error) {
       console.error("Error fetching events: ", error);
     }
   };
 
-  // Fetch the event data when the component mounts
+ 
   useEffect(() => {
     fetchEventData();
   }, []);

@@ -9,7 +9,7 @@ const MainPart = () => {
               
 </h1>
       <Cards />
-      <h1>hello</h1>
+      
     </div>
   )
 }

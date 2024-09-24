@@ -7,59 +7,47 @@ import { motion, LayoutGroup } from "framer-motion";
 const Card = (props) => {
   const [expanded, setExpanded] = useState(false);
   return (
-        <LayoutGroup>
-            {
-    expanded ? (
-      <ExpandedCard param={props} setExpanded={()=>setExpanded(false)} />
-    ) : (
-      <CompactCard param={props} setExpanded={() => setExpanded(true)} />
-    )
-    
-                }
-          </LayoutGroup>
+    <LayoutGroup>
+      {expanded ? (
+        <ExpandedCard param={props} setExpanded={() => setExpanded(false)} />
+      ) : (
+        <CompactCard param={props} setExpanded={() => setExpanded(true)} />
+      )}
+    </LayoutGroup>
   );
 };
 
-
-
-function CompactCard({ param,setExpanded }) {
+function CompactCard({ param, setExpanded }) {
   const Png = param.png;
   return (
-    <motion.div
-      className="CompactCard "
-     
-      
-      onClick={setExpanded}
-      layoutId=""
-    >
+    <motion.div className="CompactCard " onClick={setExpanded} layoutId="">
       <div className="radialBar">
-        <img src={pythonlogo} alt="" className="pythonLogo" />
+        <img src={param.logoImage} alt="" className="pythonLogo" />
       </div>
       <div className="detail">
         <span className="title">{param.title}</span>
-        <span className="date">{param.date}</span>
-        <span className="time">{param.days} Days 10:00AM to 4:00PM</span>
-        <span className="venue">Venue: {param.venue}</span>
-        <span className="venue">registered: { param.noOfStudentRegistered}/{param.studentSlot}</span>
-
-        <span className="resourcePerson">
-          Resource Person: {param.resourcePreson}
+        <span className="date">
+          {param.startDate} to {param.endDate}{" "}
         </span>
-        <span className="registered">Registered: {param.registered}</span>
+        <span className="time">
+          {param.noOfDays} - Days {param.startTime}AM to {param.endTime}PM{" "}
+        </span>
+        <span className="venue">Venue: {param.venue}</span>
+        <span className="venue">
+          registered: {param.noOfStudentRegistered}/{param.studentSlot}
+        </span>
+        <span className="eventCoordinator">Event Coordinator : {param.eventCoordinator}</span>
+        <span className="resourcePerson">
+          Resource Person: {param.resourcePerson}
+        </span>
       </div>
 
       <div>
-
-      {param.noOfStudentRegistered < param.studentSlot ? (
-            <div className="register-button">
-              Register
-            </div>
-          ) : (
-            <div className="register-button disabled">
-              Closed
-            </div>
-          )}
-
+        {param.noOfStudentRegistered < param.studentSlot ? (
+          <div className="register-button">Register</div>
+        ) : (
+          <div className="register-button-disabled">Closed</div>
+        )}
       </div>
     </motion.div>
   );
@@ -67,23 +55,21 @@ function CompactCard({ param,setExpanded }) {
 
 function ExpandedCard({ param, setExpanded }) {
   return (
-    <motion.div
-      className="ExpandedCard"
-     
-      layoutId="expandableCard"
-      layout
-    >
+    <motion.div className="ExpandedCard" layoutId="expandableCard" layout>
       <div style={{ display: "flex", justifyContent: "flex-end" }}>
-        <UilTimes onClick={setExpanded} />
-      </div><div className="expandedLogo">
-        <img src={pythonlogo} alt="" className="ExpandedpythonLogo" />
+        <UilTimes color="#ffff"  onClick={setExpanded} />
       </div>
-      
+      <div className="expandedLogo">
+        <img src={param.logoImage} alt="" className="ExpandedpythonLogo" />
+      </div>
+
       <span className="ExpandedCardTitle">{param.title}</span>
-          <div className="detail-expanded">
+      <div className="detail-expanded">
         <span className="description">Description: {param.description}</span>
         <span className="date">Date: {param.date}</span>
-        <span className="time">Time: {param.days} Days 10:00 AM to 4:00 PM</span>
+        <span className="time">
+          Time: {param.days} Days 10:00 AM to 4:00 PM
+        </span>
         <span className="venue">Venue: {param.venue}</span>
         <span className="resourcePerson">
           Resource Person: {param.resourcePreson}

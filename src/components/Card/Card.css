@@ -21,7 +21,7 @@
   border-radius: 0.7rem;
   width: 40px;
   height: 40px;
-  object-fit: contain;
+  object-fit: fill;
 }
 .register-button {
   padding: 5px;
@@ -31,7 +31,7 @@
   align-items: center;
   background: rgb(58, 179, 227);
   border-radius: 0.7rem;
-  margin-top: 10px; /* Space above the button */
+  margin-top: 10px;
   color: white;
   font-size: 12px;
   font-weight: bold;
@@ -55,9 +55,9 @@
 .title {
   font-size: 18px;
   font-weight: bold;
-  color: #000000;
+  color: #ffffff;
 }
-.date,
+.date,.eventCoordinator,
 .time,
 .venue,
 .resourcePerson,
@@ -77,7 +77,7 @@
   border-radius: 0.7rem;
   width: 60px;
   height: 60px;
-  object-fit: contain;
+  object-fit: fill;
 }
 .ExpandedCard {
   display: flex;
@@ -87,4 +87,17 @@
   padding: 10px;
   background: var(--black);
   box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
+}
+.register-button-disabled{
+  padding: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background:red;
+  border-radius: 0.7rem;
+  margin-top: 10px;
+  color: white;
+  font-size: 12px;
+  font-weight: bold;
+  transition: background 0.3s ease;
 }

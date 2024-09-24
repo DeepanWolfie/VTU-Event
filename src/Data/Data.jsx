@@ -18,6 +18,12 @@ export const SidebarData = [
   },
 ];
 
+export const adminSidebarData = [
+  { icon: UilReact, heading: "dashboard" },
+  { icon: UilReact, heading: "users" },
+  { icon: UilReact, heading: "logout" },
+];
+
 export const CardsData = [
   {
     title: "Python workshop",

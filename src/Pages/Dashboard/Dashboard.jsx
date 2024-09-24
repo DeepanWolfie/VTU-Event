@@ -44,6 +44,7 @@ const Dashboard = () => {
         }
       } else {
         console.log("No user is signed in");
+        navi('/');
       }
     });
   };
@@ -65,6 +66,7 @@ const Dashboard = () => {
         <>
           <div className="backgroundlayer">
             <div className="threelayers">
+            
               <Sidebar />
               <MainPart />
             </div>
